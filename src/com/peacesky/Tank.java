@@ -6,6 +6,7 @@ package com.peacesky;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.Random;
+import java.util.List;
 
 public class Tank {
     int x, y;                                                           // 位置
@@ -200,6 +201,20 @@ public class Tank {
     private void stay() {
         x = oldX;
         y = oldY;
+    }
+
+    public boolean hitEach(List<Tank> tanks) {                                      // 检测是否碰到彼此
+        for (int i = 0; i < tanks.size(); i++) {
+            Tank t = tanks.get(i);
+            if (this != t) {
+                if (this.live && t.live && this.getRect().intersects(t.getRect())) {
+                    this.stay();
+                    t.stay();
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public Rectangle getRect() {
