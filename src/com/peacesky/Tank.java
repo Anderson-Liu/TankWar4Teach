@@ -10,19 +10,21 @@ import java.util.Random;
 public class Tank {
     int x, y;                                                           // 位置
     int step = 0;
+    int life = 100;
+    int oldX, oldY;
     TankClient tc;
     Direction dir = Direction.STOP;                                     // 坦克方向
     Direction ptDir = Direction.D;                                      // 炮筒方向
     private boolean good;
     Random r = new Random();
-    int life = 100;
+
 
 
     private boolean live = true;
     private static int WIDTH = 30;                                      // 大小
     private static int HEIGHT = 30;
-    private static int XSPEED = 10;                                     // 速度
-    private static int YSPEED = 10;
+    private static int XSPEED = 8;                                     // 速度
+    private static int YSPEED = 8;
 
     private boolean bL = false, bU = false, bR = false, bD = false;     // 方向
 
@@ -39,7 +41,7 @@ public class Tank {
         }
         Color c =g.getColor();
         if (good) {
-            g.setColor(Color.GREEN);
+            g.setColor(Color.CYAN);
         } else {
             g.setColor(Color.LIGHT_GRAY);
         }
@@ -75,6 +77,8 @@ public class Tank {
     }
 
     protected void move() {
+        oldX = x;
+        oldY = y;
         switch (dir) {
             case L:
                 x -= XSPEED;
@@ -185,6 +189,17 @@ public class Tank {
     public void fire() {
         Missile m = new Missile(this);
         tc.msList.add(m);
+    }
+
+    public void hitWall(Wall wall) {
+        if (this.getRect().intersects(wall.getRect())) {
+            this.stay();
+        }
+    }
+
+    private void stay() {
+        x = oldX;
+        y = oldY;
     }
 
     public Rectangle getRect() {

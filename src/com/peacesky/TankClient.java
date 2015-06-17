@@ -64,11 +64,16 @@ public class TankClient extends Frame {
         g.drawString("爆炸数量：" + explodes.size(), 20, 70);
         g.drawString("敌方坦克数量：" + tanks.size(), 20, 90);
         g.drawString("主战坦克生命值" + myTank.life, 20, 110);
+
         myTank.draw(g);
+        myTank.hitWall(wall_1);
+        myTank.hitWall(wall_2);
+
         for (int i=0; i < tanks.size(); i++) {
             Tank tank = tanks.get(i);
             tank.draw(g);
-            tank.move();
+            tank.hitWall(wall_1);
+            tank.hitWall(wall_2);
         }
 
         for (int i=0; i < msList.size(); i++) {
@@ -84,6 +89,7 @@ public class TankClient extends Frame {
             Explode e = explodes.get(i);
             e.draw(g);
         }
+
         wall_1.draw(g);
         wall_2.draw(g);
     }
@@ -109,7 +115,7 @@ public class TankClient extends Frame {
         public void run() {
             while (true) {
                 try {
-                    Thread.sleep(60);
+                    Thread.sleep(50);
                     repaint();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
