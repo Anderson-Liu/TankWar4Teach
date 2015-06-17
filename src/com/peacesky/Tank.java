@@ -43,6 +43,7 @@ public class Tank {
         Color c =g.getColor();
         if (good) {
             g.setColor(Color.CYAN);
+            new BloodBar().draw(g);
         } else {
             g.setColor(Color.LIGHT_GRAY);
         }
@@ -236,6 +237,16 @@ public class Tank {
         return false;
     }
 
+    private class BloodBar{
+        public void draw(Graphics g) {
+            Color c = g.getColor();
+            g.setColor(Color.CYAN);
+            g.drawRect(x, y - 20, WIDTH, 10);
+            int w = WIDTH * life / 100;
+            g.fillRect(x, y - 20, w, 10);
+            g.setColor(c);
+        }
+    }
     public Rectangle getRect() {
         return new Rectangle(x, y, WIDTH, HEIGHT);
     }
