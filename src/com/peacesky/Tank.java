@@ -44,7 +44,7 @@ public class Tank {
         if (good) {
             g.setColor(Color.CYAN);
         } else {
-            g.setColor(Color.LIGHT_GRAY);
+            g.setColor(Color.DARK_GRAY);
         }
         g.fillOval(x, y, WIDTH, HEIGHT);
         g.setColor(c);

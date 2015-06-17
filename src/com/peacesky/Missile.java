@@ -30,7 +30,12 @@ public class Missile {
 
     public void draw(Graphics g) {
         Color c = g.getColor();
-        g.setColor(Color.BLACK);
+        if (good) {
+            g.setColor(Color.CYAN);
+        }
+        else {
+            g.setColor(Color.ORANGE);
+        }
        // g.drawOval(x, y, WIDTH, HEIGHT);
        g.fillOval(x, y, WIDTH, HEIGHT);
         g.setColor(c);

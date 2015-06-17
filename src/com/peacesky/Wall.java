@@ -19,7 +19,7 @@ public class Wall {
 
     public void draw(Graphics g) {
         Color c = g.getColor();
-        g.setColor(Color.LIGHT_GRAY);
+        g.setColor(Color.DARK_GRAY);
         g.fillRect(x, y, width, height);
         g.setColor(c);
     }

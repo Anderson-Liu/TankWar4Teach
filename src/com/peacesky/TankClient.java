@@ -51,7 +51,7 @@ public class TankClient extends Frame {
 
         initTankCount = Integer.parseInt(PropertyMngr.getProperty("initCount"));
         for (int i=0; i < initTankCount; i++) {
-            tanks.add(new Tank(300 + tank_Gap* (i + 1), 90, false, this));
+            tanks.add(new Tank(30 + tank_Gap* (i + 1), 90, false, this));
         }
         new Thread(new PaintThread()).start();
         new Thread(new KeyThread(this)).start();
