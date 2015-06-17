@@ -8,7 +8,8 @@ import java.awt.event.KeyEvent;
 public class Tank {
     int x, y;                                                           // 位置
     TankClient tc;
-    Direction dir = Direction.STOP;                                     // 方向
+    Direction dir = Direction.STOP;                                     // 坦克方向
+    Direction ptDir = Direction.D;                                      // 炮筒方向
     private static int WIDTH = 30;                                      // 大小
     private static int HEIGHT = 30;
     private static int XSPEED = 10;                                     // 速度
@@ -62,6 +63,9 @@ public class Tank {
                 break;
             case STOP:
                 break;
+        }
+        if (dir != Direction.STOP) {
+            ptDir = dir;
         }
     }
 
@@ -120,7 +124,7 @@ public class Tank {
     }
 
     public void fire() {
-        Missile m = new Missile(x, y, dir);
+        Missile m = new Missile(x + WIDTH/3, y + HEIGHT/3, ptDir);
         tc.msList.add(m);
     }
 }
