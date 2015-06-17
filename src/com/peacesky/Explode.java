@@ -27,7 +27,7 @@ public class Explode {
         }
 
         Color c = g.getColor();
-        g.setColor(Color.ORANGE);
+        g.setColor(Color.CYAN);
         g.fillOval(x, y, diameter[step], diameter[step]);
         g.setColor(c);
 

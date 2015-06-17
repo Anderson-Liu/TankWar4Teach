@@ -44,7 +44,7 @@ public class Tank {
         if (good) {
             g.setColor(Color.CYAN);
         } else {
-            g.setColor(Color.DARK_GRAY);
+            g.setColor(Color.LIGHT_GRAY);
         }
         g.fillOval(x, y, WIDTH, HEIGHT);
         g.setColor(c);
@@ -158,6 +158,9 @@ public class Tank {
             case KeyEvent.VK_CONTROL:
                 fire();
                 return;
+            case KeyEvent.VK_A:
+                superFire();
+                return;
             case KeyEvent.VK_LEFT:                                              // 少写break的话容易造成穿透;
                 bL = false;
                 break;
@@ -190,6 +193,22 @@ public class Tank {
     public void fire() {
         Missile m = new Missile(this);
         tc.msList.add(m);
+    }
+
+    public Missile fire(Direction dirs) {                                           // 指定方向的开火
+        if (!live) return null;
+        int x = this.x + Tank.WIDTH / 2 - Missile.WIDTH / 2;
+        int y = this.y + Tank.HEIGHT / 2 - Missile.HEIGHT / 2;
+        Missile s = new Missile(this, dirs);
+        tc.msList.add(s);
+        return s;
+    }
+
+    public void superFire() {
+        Direction[] dirs = Direction.values();
+        for (int i = 0; i < 8; i++) {
+            tc.msList.add(fire(dirs[i]));
+        }
     }
 
     public void hitWall(Wall wall) {

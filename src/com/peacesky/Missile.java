@@ -14,8 +14,8 @@ public class Missile {
     private boolean good;
     TankClient tankClient;
     Tank t;
-    private static final int WIDTH = 10;
-    private static final int HEIGHT = 10;
+    public static final int WIDTH = 10;
+    public static final int HEIGHT = 10;
     private static final int XSPEED = 14;
     private static final int YSPEED = 14;
 
@@ -28,13 +28,23 @@ public class Missile {
         this.tankClient = t.tc;
     }
 
+    // 指定方向的子弹，用于大招
+    public Missile(Tank tank, Direction dirs) {
+        this.t = tank;
+        this.x = t.x;
+        this.y = t.y;
+        dir = dirs;
+        this.good = t.isGood();
+        this.tankClient = t.tc;
+    }
+
     public void draw(Graphics g) {
         Color c = g.getColor();
         if (good) {
             g.setColor(Color.CYAN);
         }
         else {
-            g.setColor(Color.ORANGE);
+            g.setColor(Color.LIGHT_GRAY);
         }
        // g.drawOval(x, y, WIDTH, HEIGHT);
        g.fillOval(x, y, WIDTH, HEIGHT);
