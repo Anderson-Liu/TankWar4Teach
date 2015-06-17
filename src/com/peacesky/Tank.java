@@ -11,6 +11,7 @@ public class Tank {
     TankClient tc;
     Direction dir = Direction.STOP;                                     // 坦克方向
     Direction ptDir = Direction.D;                                      // 炮筒方向
+    boolean good;
     private static int WIDTH = 30;                                      // 大小
     private static int HEIGHT = 30;
     private static int XSPEED = 10;                                     // 速度
@@ -18,15 +19,21 @@ public class Tank {
 
     private boolean bL = false, bU = false, bR = false, bD = false;     // 方向
 
-    public Tank (int x, int y, TankClient tc) {                                        // 构造方法
+    public Tank (int x, int y, boolean good, TankClient tc) {                                        // 构造方法
         this.x = x;
         this.y = y;
         this.tc = tc;
+        this.good = good;
     }
 
     public void draw(Graphics g) {                                      // 画法
         Color c =g.getColor();
-        g.setColor(Color.GREEN);
+        if (good) {
+            g.setColor(Color.GREEN);
+        } else {
+            g.setColor(Color.BLACK);
+        }
+
         g.fillOval(x, y, WIDTH, HEIGHT);
         g.setColor(c);
         move();
