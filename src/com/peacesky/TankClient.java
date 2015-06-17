@@ -56,6 +56,8 @@ public class TankClient extends Frame {
         for (int i=0; i<msList.size(); i++) {
             Missile m = msList.get(i);
             m.draw(g);
+            m.hitTank(tank);
+            m.hitTank(myTank);
         }
     }
 

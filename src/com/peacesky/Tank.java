@@ -11,7 +11,9 @@ public class Tank {
     TankClient tc;
     Direction dir = Direction.STOP;                                     // 坦克方向
     Direction ptDir = Direction.D;                                      // 炮筒方向
-    boolean good;
+    private boolean good;
+
+    private boolean live = true;
     private static int WIDTH = 30;                                      // 大小
     private static int HEIGHT = 30;
     private static int XSPEED = 10;                                     // 速度
@@ -27,6 +29,9 @@ public class Tank {
     }
 
     public void draw(Graphics g) {                                      // 画法
+        if (!live) {
+            return;
+        }
         Color c =g.getColor();
         if (good) {
             g.setColor(Color.GREEN);
@@ -161,7 +166,23 @@ public class Tank {
     }
 
     public void fire() {
-        Missile m = new Missile(x + WIDTH/3, y + HEIGHT/3, ptDir, tc);
+        Missile m = new Missile(this);
         tc.msList.add(m);
+    }
+
+    public Rectangle getRect() {
+        return new Rectangle(x, y, WIDTH, HEIGHT);
+    }
+
+    public boolean isLive() {
+        return live;
+    }
+
+    public boolean isGood() {
+        return good;
+    }
+
+    public void setLive(boolean live) {
+        this.live = live;
     }
 }
