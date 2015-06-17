@@ -31,11 +31,36 @@ public class Tank {
         if (good) {
             g.setColor(Color.GREEN);
         } else {
-            g.setColor(Color.BLACK);
+            g.setColor(Color.LIGHT_GRAY);
         }
-
         g.fillOval(x, y, WIDTH, HEIGHT);
         g.setColor(c);
+        switch(ptDir) {
+            case L:
+                g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2, x, y + Tank.HEIGHT/2);
+                break;
+            case LU:
+                g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2, x, y);
+                break;
+            case U:
+                g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2, x + Tank.WIDTH/2, y);
+                break;
+            case RU:
+                g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2, x + Tank.WIDTH, y);
+                break;
+            case R:
+                g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2, x + Tank.WIDTH, y + Tank.HEIGHT/2);
+                break;
+            case RD:
+                g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2, x + Tank.WIDTH, y + Tank.HEIGHT);
+                break;
+            case D:
+                g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2, x + Tank.WIDTH/2, y + Tank.HEIGHT);
+                break;
+            case LD:
+                g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2, x, y + Tank.HEIGHT);
+                break;
+        }
         move();
     }
 
@@ -97,7 +122,7 @@ public class Tank {
                 bD = true;
                 break;
         }
-        tcDir();
+        locateDir();
     }
 
     public void keyReleased(KeyEvent e) {
@@ -119,11 +144,11 @@ public class Tank {
                 bD = false;
                 break;
         }
-        tcDir();
+        locateDir();
 
     }
 
-    public void tcDir() {
+    public void locateDir() {
         if (bL && !bU && !bR && !bD) dir = Direction.L;
         else if (bL && bU && !bR && !bD) dir = Direction.LU;
         else if (!bL && bU && !bR && !bD) dir = Direction.U;
