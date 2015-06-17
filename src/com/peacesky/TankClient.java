@@ -76,6 +76,8 @@ public class TankClient extends Frame {
             m.draw(g);
             m.hitTanks(tanks);
             m.hitTank(myTank);
+            m.hitWall(wall_1);
+            m.hitWall(wall_2);
         }
 
         for (int i=0; i < explodes.size(); i++) {

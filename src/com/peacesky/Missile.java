@@ -111,7 +111,10 @@ public class Missile {
         }
     }
 
-    public void hitWall(Tank tank) {
-        ///if (this.g)
+    public void hitWall(Wall wall) {
+        if (wall.getRect().intersects(this.getRect())) {
+            this.live = false;
+            tankClient.msList.remove(this);
+        }
     }
 }
