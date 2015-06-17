@@ -22,6 +22,7 @@ public class TankClient extends Frame {
     List<Explode> explodes = new ArrayList<>();
     List<Tank> tanks = new ArrayList<>();
 
+    int initTankCount;
     Image offScreenImage = null;
     Tank myTank = new Tank(200, 200, true, this);
 
@@ -46,7 +47,8 @@ public class TankClient extends Frame {
             }
         });
 
-        for (int i=0; i < 10; i++) {
+        initTankCount = Integer.parseInt(PropertyMngr.getProperty("initCount"));
+        for (int i=0; i < initTankCount; i++) {
             tanks.add(new Tank(300 + tank_Gap* (i + 1), 90, false, this));
         }
         new Thread(new PaintThread()).start();
