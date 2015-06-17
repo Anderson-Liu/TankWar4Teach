@@ -82,11 +82,25 @@ public class Missile {
 
     public void hitTank(Tank tank) {
         if(this.live && this.getRect().intersects(tank.getRect()) && tank.isLive() && this.good != tank.isGood()) {
-            this.live = false;
-            tankClient.msList.remove(this);
-            tank.setLive(false);
-            Explode e = new Explode(x, y, tankClient);
-            tankClient.explodes.add(e);
+            if (tank.isGood()) {
+                this.live = false;
+                tankClient.msList.remove(this);
+                tank.life = tank.life - 20;
+                if (tank.life <= 0) {
+                    this.live = false;
+                    tankClient.msList.remove(this);
+                    tank.setLive(false);
+                    Explode e = new Explode(x, y, tankClient);
+                    tankClient.explodes.add(e);
+                }
+            } else {
+                this.live = false;
+                tankClient.msList.remove(this);
+                tank.setLive(false);
+                tankClient.tanks.remove(tank);
+                Explode e = new Explode(x, y, tankClient);
+                tankClient.explodes.add(e);
+            }
         }
     }
 

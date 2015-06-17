@@ -60,6 +60,8 @@ public class TankClient extends Frame {
     public void paint(Graphics g) {                                         // 画法
         g.drawString("子弹数量：" + msList.size(), 20, 50);
         g.drawString("爆炸数量：" + explodes.size(), 20, 70);
+        g.drawString("敌方坦克数量：" + tanks.size(), 20, 90);
+        g.drawString("主战坦克生命值" + myTank.life, 20, 110);
         myTank.draw(g);
         for (int i=0; i < tanks.size(); i++) {
             Tank tank = tanks.get(i);

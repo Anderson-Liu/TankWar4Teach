@@ -15,6 +15,7 @@ public class Tank {
     Direction ptDir = Direction.D;                                      // 炮筒方向
     private boolean good;
     Random r = new Random();
+    int life = 100;
 
 
     private boolean live = true;
