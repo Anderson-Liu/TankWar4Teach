@@ -7,7 +7,8 @@ import java.awt.event.KeyEvent;
 
 public class Tank {
     int x, y;                                                           // 位置
-    Direction dir = Direction.STOP;                                                      // 方向
+    TankClient tc;
+    Direction dir = Direction.STOP;                                     // 方向
     private static int WIDTH = 30;                                      // 大小
     private static int HEIGHT = 30;
     private static int XSPEED = 10;                                     // 速度
@@ -15,9 +16,10 @@ public class Tank {
 
     private boolean bL = false, bU = false, bR = false, bD = false;     // 方向
 
-    public Tank (int x, int y) {                                        // 构造方法
+    public Tank (int x, int y, TankClient tc) {                                        // 构造方法
         this.x = x;
         this.y = y;
+        this.tc = tc;
     }
 
     public void draw(Graphics g) {                                      // 画法
@@ -85,6 +87,9 @@ public class Tank {
     public void keyReleased(KeyEvent e) {
         int key = e.getKeyCode();
         switch (key) {
+            case KeyEvent.VK_CONTROL:
+                fire();
+                return;
             case KeyEvent.VK_LEFT:                                              // 少写break的话容易造成穿透;
                 bL = false;
                 break;
@@ -114,4 +119,8 @@ public class Tank {
         else if (!bL && !bU && !bR && !bD) dir = Direction.STOP;
     }
 
+    public void fire() {
+        Missile m = new Missile(x, y, dir);
+        tc.msList.add(m);
+    }
 }

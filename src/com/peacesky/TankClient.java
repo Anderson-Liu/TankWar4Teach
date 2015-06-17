@@ -2,13 +2,13 @@ package com.peacesky;/*
  * Copyright (c) 2015. Peacesky.com Anderson_Liu
  */
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.*;
+import java.util.List;
 
 public class TankClient extends Frame {
     private static final int WIDTH = 600;                                   // 大小
@@ -16,8 +16,9 @@ public class TankClient extends Frame {
     private static final int x = 400;                                       // 位置
     private static final int y = 300;
 
+    List<Missile> msList = new ArrayList<>();
     Image offScreenImage = null;
-    Tank myTank = new Tank(200, 200);
+    Tank myTank = new Tank(200, 200,this);
 
 
 
@@ -48,6 +49,10 @@ public class TankClient extends Frame {
     @Override
     public void paint(Graphics g) {                                         // 画法
         myTank.draw(g);
+        for (int i=0; i<msList.size(); i++) {
+            Missile m = msList.get(i);
+            m.draw(g);
+        }
     }
 
 
