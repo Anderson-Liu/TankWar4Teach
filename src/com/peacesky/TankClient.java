@@ -11,9 +11,9 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class TankClient extends Frame {
-    private static final int WIDTH = 600;                       // 大小
+    private static final int WIDTH = 600;                                   // 大小
     private static final int HEIGHT = 400;
-    private static final int x = 400;                           // 位置
+    private static final int x = 400;                                       // 位置
     private static final int y = 300;
 
     Image offScreenImage = null;
@@ -26,15 +26,15 @@ public class TankClient extends Frame {
         new TankClient().launchFrame();
     }
 
-    public void launchFrame() {                                 // 初始化界面
-        this.setSize(WIDTH, HEIGHT);                           // 大小
-        this.setLocation(x, y);                                 // 位置
-        this.setBackground(Color.WHITE);                        // 背景
-        this.setVisible(true);                                  // 是否可见
-        this.setResizable(true);                                // 能否改变窗口大小
-        this.addWindowListener(new WindowAdapter() {            // 窗口事件监听
+    public void launchFrame() {                                             // 初始化界面
+        this.setSize(WIDTH, HEIGHT);                                        // 大小
+        this.setLocation(x, y);                                             // 位置
+        this.setBackground(Color.WHITE);                                    // 背景
+        this.setVisible(true);                                              // 是否可见
+        this.setResizable(true);                                            // 能否改变窗口大小
+        this.addWindowListener(new WindowAdapter() {                        // 窗口事件监听
             @Override
-            public void windowClosing(WindowEvent e) {          // 匿名类
+            public void windowClosing(WindowEvent e) {                      // 匿名类
                 super.windowClosing(e);
                 System.exit(0);
             }
@@ -46,8 +46,7 @@ public class TankClient extends Frame {
 
 
     @Override
-    public void paint(Graphics g) {                             // 画法
-//        super.paint(g);
+    public void paint(Graphics g) {                                         // 画法
         myTank.draw(g);
     }
 
@@ -81,7 +80,7 @@ public class TankClient extends Frame {
         }
     }
 
-    private class KeyMonitor extends KeyAdapter {                   // 内部类
+    private class KeyMonitor extends KeyAdapter {                           // 内部类
 
         @Override
         public void keyPressed(KeyEvent e) {
