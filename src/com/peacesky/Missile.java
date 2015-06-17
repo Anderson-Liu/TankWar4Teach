@@ -83,6 +83,8 @@ public class Missile {
             this.live = false;
             tankClient.msList.remove(this);
             tank.setLive(false);
+            Explode e = new Explode(x, y, tankClient);
+            tankClient.explodes.add(e);
         }
     }
 }

@@ -18,6 +18,7 @@ public class TankClient extends Frame {
     private static final int y = 300;
 
     List<Missile> msList = new ArrayList<>();
+    List<Explode> explodes = new ArrayList<>();
     Image offScreenImage = null;
     Tank myTank = new Tank(200, 200, true, this);
     Tank tank = new Tank(300, 300, false, this);
@@ -53,11 +54,16 @@ public class TankClient extends Frame {
         g.drawString("子弹数量：" + msList.size(), 20, 50);
         myTank.draw(g);
         tank.draw(g);
-        for (int i=0; i<msList.size(); i++) {
+        for (int i=0; i < msList.size(); i++) {
             Missile m = msList.get(i);
             m.draw(g);
             m.hitTank(tank);
             m.hitTank(myTank);
+        }
+
+        for (int i=0; i < explodes.size(); i++) {
+            Explode e = explodes.get(i);
+            e.draw(g);
         }
     }
 
