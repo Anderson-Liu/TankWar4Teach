@@ -158,10 +158,14 @@ public class Tank {
         switch (key) {
             case KeyEvent.VK_CONTROL:
                 fire();
-                return;
+                break;
             case KeyEvent.VK_A:
                 superFire();
-                return;
+                break;
+            case KeyEvent.VK_R:
+                this.life = 100;
+                this.setLive(true);
+                break;
             case KeyEvent.VK_LEFT:                                              // 少写break的话容易造成穿透;
                 bL = false;
                 break;
