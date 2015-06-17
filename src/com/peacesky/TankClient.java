@@ -12,7 +12,7 @@ import java.awt.event.WindowEvent;
 
 public class TankClient extends Frame {
     private static final int WIDTH = 600;                       // 大小
-    private static final int HEIGTHT = 400;
+    private static final int HEIGHT = 400;
     private static final int x = 400;                           // 位置
     private static final int y = 300;
 
@@ -27,7 +27,7 @@ public class TankClient extends Frame {
     }
 
     public void launchFrame() {                                 // 初始化界面
-        this.setSize(WIDTH, HEIGTHT);                           // 大小
+        this.setSize(WIDTH, HEIGHT);                           // 大小
         this.setLocation(x, y);                                 // 位置
         this.setBackground(Color.WHITE);                        // 背景
         this.setVisible(true);                                  // 是否可见
@@ -59,7 +59,7 @@ public class TankClient extends Frame {
         }
         Graphics gOffScreen = offScreenImage.getGraphics();                 // 获取白纸的画笔gOffScreen
         Color c = gOffScreen.getColor();                                    // 保存画笔原来的颜色
-        gOffScreen.setColor(Color.DARK_GRAY);                               // 设置画笔的颜色
+        gOffScreen.setColor(Color.WHITE);                                   // 设置画笔的颜色
         gOffScreen.fillRect(0, 0, WIDTH, HEIGHT);                           // 画一个和主界面一样大的背景
         gOffScreen.setColor(c);                                             // 画画结束，把画笔颜色还原
         paint(gOffScreen);                                                  // 将背景画到白纸上
