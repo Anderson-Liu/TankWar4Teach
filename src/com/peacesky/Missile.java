@@ -110,4 +110,8 @@ public class Missile {
             hitTank(tank);
         }
     }
+
+    public void hitWall(Tank tank) {
+        ///if (this.g)
+    }
 }
