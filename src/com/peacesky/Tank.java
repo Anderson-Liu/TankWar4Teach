@@ -125,7 +125,7 @@ public class Tank {
     }
 
     public void fire() {
-        Missile m = new Missile(x + WIDTH/3, y + HEIGHT/3, ptDir);
+        Missile m = new Missile(x + WIDTH/3, y + HEIGHT/3, ptDir, tc);
         tc.msList.add(m);
     }
 }

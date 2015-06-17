@@ -8,15 +8,18 @@ import java.awt.*;
 public class Missile {
     int x, y;
     Direction dir;
+    boolean live = true;
+    TankClient tankClient;
     private static final int WIDTH = 10;
     private static final int HEIGHT = 10;
     private static final int XSPEED = 14;
     private static final int YSPEED = 14;
 
-    public Missile (int x, int y, Direction dir) {
+    public Missile (int x, int y, Direction dir, TankClient tankClient) {
         this.x = x;
         this.y = y;
         this.dir = dir;
+        this.tankClient = tankClient;
     }
 
     public void draw(Graphics g) {
@@ -61,6 +64,9 @@ public class Missile {
             case STOP:
                 break;
         }
-        if ()
+        if(x < 0 || y < 0 || x > TankClient.WIDTH || y > TankClient.HEIGHT) {
+            live = false;
+            tankClient.msList.remove(this);
+        }
     }
 }

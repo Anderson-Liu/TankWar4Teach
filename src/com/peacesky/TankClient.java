@@ -12,8 +12,8 @@ import java.util.*;
 import java.util.List;
 
 public class TankClient extends Frame {
-    private static final int WIDTH = 600;                                   // 大小
-    private static final int HEIGHT = 400;
+    public static final int WIDTH = 600;                                   // 大小
+    public static final int HEIGHT = 400;
     private static final int x = 400;                                       // 位置
     private static final int y = 300;
 
