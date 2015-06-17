@@ -52,8 +52,10 @@ public class TankClient extends Frame {
     @Override
     public void paint(Graphics g) {                                         // 画法
         g.drawString("子弹数量：" + msList.size(), 20, 50);
+        g.drawString("爆炸数量：" + explodes.size(), 20, 70);
         myTank.draw(g);
         tank.draw(g);
+        tank.move();
         for (int i=0; i < msList.size(); i++) {
             Missile m = msList.get(i);
             m.draw(g);
@@ -88,7 +90,7 @@ public class TankClient extends Frame {
         public void run() {
             while (true) {
                 try {
-                    Thread.sleep(40);
+                    Thread.sleep(50);
                     repaint();
                 } catch (InterruptedException e) {
                     e.printStackTrace();

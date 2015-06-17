@@ -5,13 +5,17 @@ package com.peacesky;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.Random;
 
 public class Tank {
     int x, y;                                                           // 位置
+    int step = 0;
     TankClient tc;
     Direction dir = Direction.STOP;                                     // 坦克方向
     Direction ptDir = Direction.D;                                      // 炮筒方向
     private boolean good;
+    Random r = new Random();
+
 
     private boolean live = true;
     private static int WIDTH = 30;                                      // 大小
@@ -69,7 +73,7 @@ public class Tank {
         move();
     }
 
-    private void move() {
+    protected void move() {
         switch (dir) {
             case L:
                 x -= XSPEED;
@@ -109,6 +113,18 @@ public class Tank {
         if(y < 30) y = 30;
         if(x + Tank.WIDTH > TankClient.WIDTH) x = TankClient.WIDTH - Tank.WIDTH;
         if(y + Tank.HEIGHT > TankClient.HEIGHT) y = TankClient.HEIGHT - Tank.HEIGHT;
+
+        if(!good) {
+            Direction[] dirs = Direction.values();
+            if(step == 0) {
+                step = r.nextInt(15) + 3;
+                int rn = r.nextInt(dirs.length);
+                dir = dirs[rn];
+            }
+            step --;
+
+            if(r.nextInt(40) > 38) this.fire();
+        }
     }
 
     public void keyPressed(KeyEvent e) {
