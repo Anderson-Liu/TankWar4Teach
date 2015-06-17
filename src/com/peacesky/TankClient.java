@@ -12,7 +12,7 @@ import java.util.*;
 import java.util.List;
 
 public class TankClient extends Frame {
-    public static final int WIDTH = 600;                                   // 大小
+    public static final int WIDTH = 600;                                    // 大小
     public static final int HEIGHT = 400;
     private static final int x = 400;                                       // 位置
     private static final int y = 300;
@@ -27,8 +27,7 @@ public class TankClient extends Frame {
     Tank myTank = new Tank(200, 200, true, this);
     Wall wall_1 = new Wall(100, 150, 15, 200, this);
     Wall wall_2 = new Wall(200, 130, 200, 15, this);
-
-
+    Blood b = new Blood();
 
 
     public static void main(String args[]) {
@@ -94,7 +93,7 @@ public class TankClient extends Frame {
 
         wall_1.draw(g);
         wall_2.draw(g);
-        new Blood().draw(g);
+        b.draw(g);
     }
 
 
