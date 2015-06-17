@@ -12,6 +12,8 @@ public class TankClient extends Frame {
     private static final int x = 400;                           // 位置
     private static final int y = 300;
 
+    Tank t = new Tank(200, 200);
+
 
 
 
@@ -19,7 +21,7 @@ public class TankClient extends Frame {
         new TankClient().launchFrame();
     }
 
-    public void launchFrame() {
+    public void launchFrame() {                                 // 初始化界面
         this.setSize(WIDTH, HEIGTHT);
         this.setLocation(x, y);
         this.setBackground(Color.WHITE);
@@ -32,5 +34,12 @@ public class TankClient extends Frame {
                 System.exit(0);
             }
         });
+    }
+
+
+    @Override
+    public void paint(Graphics g) {                             // 画法
+        super.paint(g);
+        t.draw(g);
     }
 }
