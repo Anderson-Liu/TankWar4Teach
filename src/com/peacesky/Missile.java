@@ -80,6 +80,8 @@ public class Missile {
 
     public void hitTank(Tank tank) {
         if(this.live && this.getRect().intersects(tank.getRect()) && tank.isLive() && this.good != tank.isGood()) {
+            this.live = false;
+            tankClient.msList.remove(this);
             tank.setLive(false);
         }
     }
