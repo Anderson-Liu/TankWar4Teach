@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e1c3ee0-6937-4be9-ac16-375453947885" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/TankClient$KeyMonitor.class" afterPath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/TankClient$KeyMonitor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/TankClient$KeyThread.class" afterPath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/TankClient$KeyThread.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/TankClient$PaintThread.class" afterPath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/TankClient$PaintThread.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/TankClient.class" afterPath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/TankClient.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/peacesky/Missile.java" afterPath="$PROJECT_DIR$/src/com/peacesky/Missile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/peacesky/Tank.java" afterPath="$PROJECT_DIR$/src/com/peacesky/Tank.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/peacesky/Wall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/Missile.class" afterPath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/Missile.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/Tank$1.class" afterPath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/Tank$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/Tank.class" afterPath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/Tank.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/peacesky/TankClient.java" afterPath="$PROJECT_DIR$/src/com/peacesky/TankClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TankWar4Teach.iws" />
@@ -46,10 +43,22 @@
       <file leaf-file-name="TankClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/peacesky/TankClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41463414">
-              <caret line="63" column="55" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.5390244">
+              <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Wall.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/peacesky/Wall.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+              <folding>
+                <element signature="e#629#630#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/peacesky/Missile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="99" column="46" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
+              <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1880#1881#0" expanded="true" />
@@ -140,6 +149,7 @@
         <option value="$PROJECT_DIR$/out/production/TankWar4Teach/config/tank.properties" />
         <option value="$PROJECT_DIR$/src/com/peacesky/Tank.java" />
         <option value="$PROJECT_DIR$/src/com/peacesky/Missile.java" />
+        <option value="$PROJECT_DIR$/src/com/peacesky/Wall.java" />
         <option value="$PROJECT_DIR$/src/com/peacesky/TankClient.java" />
       </list>
     </option>
@@ -601,7 +611,7 @@
       <option name="number" value="Default" />
       <updated>1434505794175</updated>
       <workItem from="1434505795442" duration="7379000" />
-      <workItem from="1434514991872" duration="9767000" />
+      <workItem from="1434514991872" duration="10283000" />
     </task>
     <task id="LOCAL-00001" summary="当子弹越过边界时，去掉子弹">
       <created>1434526735834</created>
@@ -669,11 +679,17 @@
       <option name="project" value="LOCAL" />
       <updated>1434531728102</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="让主战坦克耐打一些。&#10;敌方坦克被炸毁后从容器删去。&#10;显示坦克数量，生命值">
+      <created>1434532474130</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1434532474130</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17146000" />
+    <option name="totallyTimeSpent" value="17662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -729,7 +745,8 @@
     <MESSAGE value="让敌军动起来。&#10;随机移动，随机开火。" />
     <MESSAGE value="让敌军坦克多一些" />
     <MESSAGE value="使用配置文件来设置坦克初始化数量" />
-    <option name="LAST_COMMIT_MESSAGE" value="使用配置文件来设置坦克初始化数量" />
+    <MESSAGE value="让主战坦克耐打一些。&#10;敌方坦克被炸毁后从容器删去。&#10;显示坦克数量，生命值" />
+    <option name="LAST_COMMIT_MESSAGE" value="让主战坦克耐打一些。&#10;敌方坦克被炸毁后从容器删去。&#10;显示坦克数量，生命值" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -830,6 +847,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/peacesky/Missile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1880#1881#0" expanded="true" />
+            <element signature="e#1937#1938#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/peacesky/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.4">
@@ -848,22 +877,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/peacesky/Missile.java">
+    <entry file="file://$PROJECT_DIR$/src/com/peacesky/Wall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="46" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1880#1881#0" expanded="true" />
-            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="e#629#630#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/peacesky/TankClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41463414">
-          <caret line="63" column="55" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.5390244">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -25,6 +25,8 @@ public class TankClient extends Frame {
     int initTankCount;
     Image offScreenImage = null;
     Tank myTank = new Tank(200, 200, true, this);
+    Wall wall_1 = new Wall(100, 150, 15, 200, this);
+    Wall wall_2 = new Wall(200, 130, 200, 15, this);
 
 
 
@@ -80,6 +82,8 @@ public class TankClient extends Frame {
             Explode e = explodes.get(i);
             e.draw(g);
         }
+        wall_1.draw(g);
+        wall_2.draw(g);
     }
 
 
