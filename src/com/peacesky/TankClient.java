@@ -70,6 +70,7 @@ public class TankClient extends Frame {
         myTank.hitWall(wall_1);
         myTank.hitWall(wall_2);
         myTank.hitEach(tanks);
+        myTank.eat(b);
 
         for (int i=0; i < tanks.size(); i++) {
             Tank tank = tanks.get(i);

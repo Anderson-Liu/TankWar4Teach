@@ -43,12 +43,20 @@ public class Blood {
         if (step == pos.length) {
             step = 0;
             time++;
-            if (time == 10) {
+            if (time == 1000) {
                 this.live = false;
                 return;
             }
         }
         x = pos[step][0];
         y = pos[step][1];
+    }
+
+    public Rectangle getRect() {
+        return new Rectangle(x, y, WIDTH, HEIGHT);
+    }
+
+    public void setLive(boolean live) {
+        this.live = live;
     }
 }

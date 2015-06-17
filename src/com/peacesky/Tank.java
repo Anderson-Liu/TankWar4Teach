@@ -130,7 +130,7 @@ public class Tank {
             }
             step --;
 
-            if(r.nextInt(40) > 38) this.fire();
+            if(r.nextInt(40) > 35) this.fire();
         }
     }
 
@@ -246,6 +246,15 @@ public class Tank {
             g.fillRect(x, y - 20, w, 10);
             g.setColor(c);
         }
+    }
+
+    public boolean eat(Blood b) {                                                   // 检测是否吃到了血块
+        if (this.getRect().intersects(b.getRect())) {
+            life = 100;
+            b.setLive(false);
+            return true;
+        }
+        return false;
     }
     public Rectangle getRect() {
         return new Rectangle(x, y, WIDTH, HEIGHT);
