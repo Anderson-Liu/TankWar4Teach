@@ -16,12 +16,14 @@ public class TankClient extends Frame {
     public static final int HEIGHT = 400;
     private static final int x = 400;                                       // 位置
     private static final int y = 300;
+    private static int tank_Gap = 50;
 
     List<Missile> msList = new ArrayList<>();
     List<Explode> explodes = new ArrayList<>();
+    List<Tank> tanks = new ArrayList<>();
+
     Image offScreenImage = null;
     Tank myTank = new Tank(200, 200, true, this);
-    Tank tank = new Tank(300, 300, false, this);
 
 
 
@@ -44,6 +46,9 @@ public class TankClient extends Frame {
             }
         });
 
+        for (int i=0; i < 10; i++) {
+            tanks.add(new Tank(300 + tank_Gap* (i + 1), 90, false, this));
+        }
         new Thread(new PaintThread()).start();
         new Thread(new KeyThread(this)).start();
     }
@@ -54,12 +59,16 @@ public class TankClient extends Frame {
         g.drawString("子弹数量：" + msList.size(), 20, 50);
         g.drawString("爆炸数量：" + explodes.size(), 20, 70);
         myTank.draw(g);
-        tank.draw(g);
-        tank.move();
+        for (int i=0; i < tanks.size(); i++) {
+            Tank tank = tanks.get(i);
+            tank.draw(g);
+            tank.move();
+        }
+
         for (int i=0; i < msList.size(); i++) {
             Missile m = msList.get(i);
             m.draw(g);
-            m.hitTank(tank);
+            m.hitTanks(tanks);
             m.hitTank(myTank);
         }
 
@@ -90,7 +99,7 @@ public class TankClient extends Frame {
         public void run() {
             while (true) {
                 try {
-                    Thread.sleep(50);
+                    Thread.sleep(60);
                     repaint();
                 } catch (InterruptedException e) {
                     e.printStackTrace();

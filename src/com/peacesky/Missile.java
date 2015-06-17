@@ -4,6 +4,8 @@ package com.peacesky;
  */
 
 import java.awt.*;
+import java.util.*;
+import java.util.List;
 
 public class Missile {
     int x, y;
@@ -85,6 +87,13 @@ public class Missile {
             tank.setLive(false);
             Explode e = new Explode(x, y, tankClient);
             tankClient.explodes.add(e);
+        }
+    }
+
+    public void hitTanks(List<Tank> tanks) {
+        for (int i=0; i<tanks.size(); i++ ) {
+            Tank tank = tanks.get(i);
+            hitTank(tank);
         }
     }
 }
