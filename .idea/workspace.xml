@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e1c3ee0-6937-4be9-ac16-375453947885" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/TankClient$1.class" afterPath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/TankClient$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/TankClient.class" afterPath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/TankClient.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/peacesky/TankClient.java" afterPath="$PROJECT_DIR$/src/com/peacesky/TankClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -38,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TankClient.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TankClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/peacesky/TankClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.2083335">
-              <caret line="14" column="76" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="100" column="73" selection-start-line="100" selection-start-column="73" selection-end-line="100" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tank.properties" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tank.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/out/production/TankWar4Teach/config/tank.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.29166666">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -151,13 +149,13 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/peacesky/Direction.java" />
         <option value="$PROJECT_DIR$/src/com/peacesky/PropertyMngr.java" />
-        <option value="$PROJECT_DIR$/out/production/TankWar4Teach/config/tank.properties" />
         <option value="$PROJECT_DIR$/src/com/peacesky/Wall.java" />
         <option value="$PROJECT_DIR$/src/com/peacesky/Missile.java" />
         <option value="$PROJECT_DIR$/src/com/peacesky/Explode.java" />
         <option value="$PROJECT_DIR$/src/com/peacesky/Tank.java" />
         <option value="$PROJECT_DIR$/src/com/peacesky/Blood.java" />
         <option value="$PROJECT_DIR$/src/com/peacesky/TankClient.java" />
+        <option value="$PROJECT_DIR$/out/production/TankWar4Teach/config/tank.properties" />
       </list>
     </option>
   </component>
@@ -622,7 +620,7 @@
       <workItem from="1434533229909" duration="24000" />
       <workItem from="1434534464279" duration="2057000" />
       <workItem from="1434537378679" duration="242000" />
-      <workItem from="1434537676385" duration="3246000" />
+      <workItem from="1434537676385" duration="3591000" />
     </task>
     <task id="LOCAL-00001" summary="当子弹越过边界时，去掉子弹">
       <created>1434526735834</created>
@@ -744,11 +742,17 @@
       <option name="project" value="LOCAL" />
       <updated>1434546919657</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="修复血块不移动的Bug">
+      <created>1434546971886</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1434546971886</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23380000" />
+    <option name="totallyTimeSpent" value="23725000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="780" extended-state="0" />
@@ -813,7 +817,8 @@
     <MESSAGE value="添加超级炮弹&#10;再改改颜色" />
     <MESSAGE value="图形化显示生命值" />
     <MESSAGE value="留一个小bug，血块不移动" />
-    <option name="LAST_COMMIT_MESSAGE" value="留一个小bug，血块不移动" />
+    <MESSAGE value="修复血块不移动的Bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复血块不移动的Bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1152,14 +1157,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/TankWar4Teach/config/tank.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/peacesky/Wall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1206,11 +1203,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/peacesky/TankClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.2083335">
-          <caret line="14" column="76" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="100" column="73" selection-start-line="100" selection-start-column="73" selection-end-line="100" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/TankWar4Teach/config/tank.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29166666">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

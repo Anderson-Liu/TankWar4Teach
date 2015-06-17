@@ -3,6 +3,7 @@ package com.peacesky;
  * Copyright (c) 2015. Peacesky.com Anderson_Liu
  */
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -23,6 +24,7 @@ public class TankClient extends Frame {
     List<Tank> tanks = new ArrayList<>();
 
     int initTankCount;
+    int time = 0;
     Image offScreenImage = null;
     Tank myTank = new Tank(200, 200, true, this);
     Wall wall_1 = new Wall(100, 150, 15, 200, this);
@@ -94,6 +96,21 @@ public class TankClient extends Frame {
         wall_1.draw(g);
         wall_2.draw(g);
         b.draw(g);
+
+        if (tanks.size() <= 0) {
+            if (time < Integer.parseInt(PropertyMngr.getProperty("reCount"))) {
+                time++;                                                      // 比较是否超过配置文件中对敌方坦克复活次数的限制
+                for (int i = 0; i < time * 3; i++) {                         // 否的话，才增加新的一批地方坦克
+                    if (tank_Gap * (i + 1) > WIDTH) {                        // 坦克太多以至于初始化时画到了界面外时，弹窗警告
+                        JOptionPane.showMessageDialog(this, "The count of Tank is too many to show!\n" +
+                                "Please reduce the com.Peacesky.Tank's amount!");
+                        System.exit(0);
+                    } else {
+                        tanks.add(new Tank(50 + tank_Gap * (i + 1), 90, false, this));
+                    }
+                }
+            }
+        }
     }
 
 
