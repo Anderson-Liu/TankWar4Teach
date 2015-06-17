@@ -1,4 +1,5 @@
-package com.peacesky;/*
+package com.peacesky;
+/*
  * Copyright (c) 2015. Peacesky.com Anderson_Liu
  */
 
@@ -6,24 +7,24 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class Tank {
-    int x, y;                                                           // Î»ÖÃ
+    int x, y;                                                           // ä½ç½®
     TankClient tc;
-    Direction dir = Direction.STOP;                                     // Ì¹¿Ë·½Ïò
-    Direction ptDir = Direction.D;                                      // ÅÚÍ²·½Ïò
-    private static int WIDTH = 30;                                      // ´óĞ¡
+    Direction dir = Direction.STOP;                                     // å¦å…‹æ–¹å‘
+    Direction ptDir = Direction.D;                                      // ç‚®ç­’æ–¹å‘
+    private static int WIDTH = 30;                                      // å¤§å°
     private static int HEIGHT = 30;
-    private static int XSPEED = 10;                                     // ËÙ¶È
+    private static int XSPEED = 10;                                     // é€Ÿåº¦
     private static int YSPEED = 10;
 
-    private boolean bL = false, bU = false, bR = false, bD = false;     // ·½Ïò
+    private boolean bL = false, bU = false, bR = false, bD = false;     // æ–¹å‘
 
-    public Tank (int x, int y, TankClient tc) {                                        // ¹¹Ôì·½·¨
+    public Tank (int x, int y, TankClient tc) {                                        // æ„é€ æ–¹æ³•
         this.x = x;
         this.y = y;
         this.tc = tc;
     }
 
-    public void draw(Graphics g) {                                      // »­·¨
+    public void draw(Graphics g) {                                      // ç”»æ³•
         Color c =g.getColor();
         g.setColor(Color.GREEN);
         g.fillOval(x, y, WIDTH, HEIGHT);
@@ -72,7 +73,7 @@ public class Tank {
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
         switch (key) {
-            case KeyEvent.VK_LEFT:                                              // ÉÏÏÂ×óÓÒ¼ü
+            case KeyEvent.VK_LEFT:                                              // ä¸Šä¸‹å·¦å³é”®
                 bL = true;
                 break;
             case KeyEvent.VK_RIGHT:
@@ -94,7 +95,7 @@ public class Tank {
             case KeyEvent.VK_CONTROL:
                 fire();
                 return;
-            case KeyEvent.VK_LEFT:                                              // ÉÙĞ´breakµÄ»°ÈİÒ×Ôì³É´©Í¸;
+            case KeyEvent.VK_LEFT:                                              // å°‘å†™breakçš„è¯å®¹æ˜“é€ æˆç©¿é€;
                 bL = false;
                 break;
             case KeyEvent.VK_RIGHT:

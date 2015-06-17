@@ -1,4 +1,5 @@
-package com.peacesky;/*
+package com.peacesky;
+/*
  * Copyright (c) 2015. Peacesky.com Anderson_Liu
  */
 
@@ -11,9 +12,9 @@ import java.util.*;
 import java.util.List;
 
 public class TankClient extends Frame {
-    private static final int WIDTH = 600;                                   // ´óĞ¡
+    private static final int WIDTH = 600;                                   // å¤§å°
     private static final int HEIGHT = 400;
-    private static final int x = 400;                                       // Î»ÖÃ
+    private static final int x = 400;                                       // ä½ç½®
     private static final int y = 300;
 
     List<Missile> msList = new ArrayList<>();
@@ -27,15 +28,15 @@ public class TankClient extends Frame {
         new TankClient().launchFrame();
     }
 
-    public void launchFrame() {                                             // ³õÊ¼»¯½çÃæ
-        this.setSize(WIDTH, HEIGHT);                                        // ´óĞ¡
-        this.setLocation(x, y);                                             // Î»ÖÃ
-        this.setBackground(Color.WHITE);                                    // ±³¾°
-        this.setVisible(true);                                              // ÊÇ·ñ¿É¼û
-        this.setResizable(true);                                            // ÄÜ·ñ¸Ä±ä´°¿Ú´óĞ¡
-        this.addWindowListener(new WindowAdapter() {                        // ´°¿ÚÊÂ¼ş¼àÌı
+    public void launchFrame() {                                             // åˆå§‹åŒ–ç•Œé¢
+        this.setSize(WIDTH, HEIGHT);                                        // å¤§å°
+        this.setLocation(x, y);                                             // ä½ç½®
+        this.setBackground(Color.WHITE);                                    // èƒŒæ™¯
+        this.setVisible(true);                                              // æ˜¯å¦å¯è§
+        this.setResizable(true);                                            // èƒ½å¦æ”¹å˜çª—å£å¤§å°
+        this.addWindowListener(new WindowAdapter() {                        // çª—å£äº‹ä»¶ç›‘å¬
             @Override
-            public void windowClosing(WindowEvent e) {                      // ÄäÃûÀà
+            public void windowClosing(WindowEvent e) {                      // åŒ¿åç±»
                 super.windowClosing(e);
                 System.exit(0);
             }
@@ -47,7 +48,8 @@ public class TankClient extends Frame {
 
 
     @Override
-    public void paint(Graphics g) {                                         // »­·¨
+    public void paint(Graphics g) {                                         // ç”»æ³•
+        g.drawString("å­å¼¹æ•°é‡ï¼š" + msList.size(), 20, 50);
         myTank.draw(g);
         for (int i=0; i<msList.size(); i++) {
             Missile m = msList.get(i);
@@ -57,17 +59,17 @@ public class TankClient extends Frame {
 
 
     @Override
-    public void update(Graphics g) {                                        // ÖØĞ´updateÊµÏÖË«»º³å½µµÍÉÁË¸Ğ§¹û
+    public void update(Graphics g) {                                        // é‡å†™updateå®ç°åŒç¼“å†²é™ä½é—ªçƒæ•ˆæœ
         if (offScreenImage == null) {
-            offScreenImage = this.createImage(WIDTH, HEIGHT);               // ´´½¨Ò»ÕÅ°×Ö½
+            offScreenImage = this.createImage(WIDTH, HEIGHT);               // åˆ›å»ºä¸€å¼ ç™½çº¸
         }
-        Graphics gOffScreen = offScreenImage.getGraphics();                 // »ñÈ¡°×Ö½µÄ»­±ÊgOffScreen
-        Color c = gOffScreen.getColor();                                    // ±£´æ»­±ÊÔ­À´µÄÑÕÉ«
-        gOffScreen.setColor(Color.WHITE);                                   // ÉèÖÃ»­±ÊµÄÑÕÉ«
-        gOffScreen.fillRect(0, 0, WIDTH, HEIGHT);                           // »­Ò»¸öºÍÖ÷½çÃæÒ»Ñù´óµÄ±³¾°
-        gOffScreen.setColor(c);                                             // »­»­½áÊø£¬°Ñ»­±ÊÑÕÉ«»¹Ô­
-        paint(gOffScreen);                                                  // ½«±³¾°»­µ½°×Ö½ÉÏ
-        g.drawImage(offScreenImage, 0, 0, null);                            // ½«ÕâÕÅ´øÓĞÁË±³¾°µÄÍ¼Æ¬»­µ½Ç°Ì¨È¥
+        Graphics gOffScreen = offScreenImage.getGraphics();                 // è·å–ç™½çº¸çš„ç”»ç¬”gOffScreen
+        Color c = gOffScreen.getColor();                                    // ä¿å­˜ç”»ç¬”åŸæ¥çš„é¢œè‰²
+        gOffScreen.setColor(Color.WHITE);                                   // è®¾ç½®ç”»ç¬”çš„é¢œè‰²
+        gOffScreen.fillRect(0, 0, WIDTH, HEIGHT);                           // ç”»ä¸€ä¸ªå’Œä¸»ç•Œé¢ä¸€æ ·å¤§çš„èƒŒæ™¯
+        gOffScreen.setColor(c);                                             // ç”»ç”»ç»“æŸï¼ŒæŠŠç”»ç¬”é¢œè‰²è¿˜åŸ
+        paint(gOffScreen);                                                  // å°†èƒŒæ™¯ç”»åˆ°ç™½çº¸ä¸Š
+        g.drawImage(offScreenImage, 0, 0, null);                            // å°†è¿™å¼ å¸¦æœ‰äº†èƒŒæ™¯çš„å›¾ç‰‡ç”»åˆ°å‰å°å»
     }
 
     private class PaintThread implements Runnable {
@@ -85,7 +87,7 @@ public class TankClient extends Frame {
         }
     }
 
-    private class KeyMonitor extends KeyAdapter {                           // ÄÚ²¿Àà
+    private class KeyMonitor extends KeyAdapter {                           // å†…éƒ¨ç±»
 
         @Override
         public void keyPressed(KeyEvent e) {
