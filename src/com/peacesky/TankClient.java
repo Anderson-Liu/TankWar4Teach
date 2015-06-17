@@ -94,6 +94,7 @@ public class TankClient extends Frame {
 
         wall_1.draw(g);
         wall_2.draw(g);
+        new Blood().draw(g);
     }
 
 

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e1c3ee0-6937-4be9-ac16-375453947885" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/peacesky/Tank.java" afterPath="$PROJECT_DIR$/src/com/peacesky/Tank.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/peacesky/Blood.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/Tank$1.class" afterPath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/Tank$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/Tank.class" afterPath="$PROJECT_DIR$/out/production/TankWar4Teach/com/peacesky/Tank.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/peacesky/TankClient.java" afterPath="$PROJECT_DIR$/src/com/peacesky/TankClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TankWar4Teach.iws" />
@@ -36,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TankClient.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TankClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/peacesky/TankClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.5441176">
+              <caret line="95" column="23" selection-start-line="95" selection-start-column="23" selection-end-line="95" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,14 +93,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tank.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Tank.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/peacesky/Tank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32539684">
+            <state vertical-scroll-proportion="-4.1">
               <caret line="242" column="33" selection-start-line="242" selection-start-column="33" selection-end-line="242" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Blood.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/peacesky/Blood.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -140,11 +153,12 @@
         <option value="$PROJECT_DIR$/src/com/peacesky/Direction.java" />
         <option value="$PROJECT_DIR$/src/com/peacesky/PropertyMngr.java" />
         <option value="$PROJECT_DIR$/out/production/TankWar4Teach/config/tank.properties" />
-        <option value="$PROJECT_DIR$/src/com/peacesky/TankClient.java" />
         <option value="$PROJECT_DIR$/src/com/peacesky/Wall.java" />
         <option value="$PROJECT_DIR$/src/com/peacesky/Missile.java" />
         <option value="$PROJECT_DIR$/src/com/peacesky/Explode.java" />
         <option value="$PROJECT_DIR$/src/com/peacesky/Tank.java" />
+        <option value="$PROJECT_DIR$/src/com/peacesky/Blood.java" />
+        <option value="$PROJECT_DIR$/src/com/peacesky/TankClient.java" />
       </list>
     </option>
   </component>
@@ -609,7 +623,7 @@
       <workItem from="1434533229909" duration="24000" />
       <workItem from="1434534464279" duration="2057000" />
       <workItem from="1434537378679" duration="242000" />
-      <workItem from="1434537676385" duration="2237000" />
+      <workItem from="1434537676385" duration="3183000" />
     </task>
     <task id="LOCAL-00001" summary="当子弹越过边界时，去掉子弹">
       <created>1434526735834</created>
@@ -719,11 +733,17 @@
       <option name="project" value="LOCAL" />
       <updated>1434545627325</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="图形化显示生命值">
+      <created>1434545964216</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1434545964216</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22371000" />
+    <option name="totallyTimeSpent" value="23317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="780" extended-state="0" />
@@ -735,6 +755,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="584" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.85339504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32561728" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -751,7 +772,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="584" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -786,11 +806,12 @@
     <MESSAGE value="使坦克之间无法互相碾压" />
     <MESSAGE value="改改颜色" />
     <MESSAGE value="添加超级炮弹&#10;再改改颜色" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加超级炮弹&#10;再改改颜色" />
+    <MESSAGE value="图形化显示生命值" />
+    <option name="LAST_COMMIT_MESSAGE" value="图形化显示生命值" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1133,16 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/peacesky/TankClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/peacesky/Wall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1171,8 +1182,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/peacesky/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32539684">
+        <state vertical-scroll-proportion="-4.1">
           <caret line="242" column="33" selection-start-line="242" selection-start-column="33" selection-end-line="242" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/peacesky/Blood.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/peacesky/TankClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5441176">
+          <caret line="95" column="23" selection-start-line="95" selection-start-column="23" selection-end-line="95" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
