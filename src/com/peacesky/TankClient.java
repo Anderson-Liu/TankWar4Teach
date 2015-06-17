@@ -16,6 +16,7 @@ public class TankClient extends Frame {
     private static final int x = 400;                           // 位置
     private static final int y = 300;
 
+    Image offScreenImage = null;
     Tank myTank = new Tank(200, 200);
 
 
@@ -46,10 +47,24 @@ public class TankClient extends Frame {
 
     @Override
     public void paint(Graphics g) {                             // 画法
-        super.paint(g);
+//        super.paint(g);
         myTank.draw(g);
     }
 
+
+    @Override
+    public void update(Graphics g) {                                        // 重写update实现双缓冲降低闪烁效果
+        if (offScreenImage == null) {
+            offScreenImage = this.createImage(WIDTH, HEIGHT);               // 创建一张白纸
+        }
+        Graphics gOffScreen = offScreenImage.getGraphics();                 // 获取白纸的画笔gOffScreen
+        Color c = gOffScreen.getColor();                                    // 保存画笔原来的颜色
+        gOffScreen.setColor(Color.DARK_GRAY);                               // 设置画笔的颜色
+        gOffScreen.fillRect(0, 0, WIDTH, HEIGHT);                           // 画一个和主界面一样大的背景
+        gOffScreen.setColor(c);                                             // 画画结束，把画笔颜色还原
+        paint(gOffScreen);                                                  // 将背景画到白纸上
+        g.drawImage(offScreenImage, 0, 0, null);                            // 将这张带有了背景的图片画到前台去
+    }
 
     private class PaintThread implements Runnable {
 
@@ -57,7 +72,7 @@ public class TankClient extends Frame {
         public void run() {
             while (true) {
                 try {
-                    Thread.sleep(50);
+                    Thread.sleep(40);
                     repaint();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -66,7 +81,7 @@ public class TankClient extends Frame {
         }
     }
 
-    private class KeyMonitor extends KeyAdapter {
+    private class KeyMonitor extends KeyAdapter {                   // 内部类
 
         @Override
         public void keyPressed(KeyEvent e) {
